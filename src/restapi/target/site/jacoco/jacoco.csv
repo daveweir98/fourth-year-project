@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+restapi,restapi.dataAccess,ImagesAccess,12,33,0,0,4,8,4,3,4,3
+restapi,restapi.dataAccess,AppraisalAccess,3,72,0,0,2,19,1,10,1,10
+restapi,restapi.dataAccess,CarAccess,0,33,0,0,0,10,0,5,0,5
+restapi,restapi,PutController,0,41,0,0,0,11,0,3,0,3
+restapi,restapi,GetController,12,77,1,1,4,20,1,8,0,8
+restapi,restapi,RestApi,16,0,0,0,5,0,3,0,3,0
+restapi,restapi,PostController,12,277,0,4,3,57,0,11,0,9
+restapi,restapi,RestApi.new WebMvcConfigurerAdapter() {...},18,0,0,0,3,0,2,0,2,0

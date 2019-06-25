@@ -1,0 +1,83 @@
+<div id="report-content" *ngIf="reportContent != undefined">
+  <h1>Report</h1>
+  <h2>{{reportContent.carAccess.carRegistration}}</h2>
+
+  <h4>Details</h4>
+
+  <div *ngIf="!reportContent.appraisalComplete" class="status" id="open">
+    <p> This appraisal is OPEN </p>
+  </div>
+  <div *ngIf="reportContent.appraisalComplete" class="status" id="closed">
+    <p> This appraisal is CLOSED </p>
+  </div>
+  <div *ngIf="!reportContent.damagePresent" class="status" id="flagged">
+    <p> Flagged as no damage present </p>
+  </div>
+
+  <div id="details-table">
+    <table>
+      <tr>
+        <th>Appraisal No.</th>
+        <td id="appraisalId">{{reportContent.appraisalId}}</td>
+      </tr>
+      <tr>
+        <th>Registration</th>
+        <td id="carRegistration">{{reportContent.carAccess.carRegistration}}</td>
+      </tr>
+      <tr>
+        <th>Make</th>
+        <td id="make">{{reportContent.carAccess.make}}</td>
+      </tr>
+      <tr>
+        <th>Model</th>
+        <td id="model">{{reportContent.carAccess.model}}</td>
+      </tr>
+      <tr>
+        <th>Rental Date</th>
+        <td id="rentalDate">{{reportContent.rentalDate}}</td>
+      </tr>
+      <tr>
+        <th>Return Date</th>
+        <td id="returnDate">{{reportContent.returnDate}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="report-images">
+    <h4>Before Images</h4>
+    <div id="before-images" class="image-style">
+      <img (click)="modal(0)"  src="http://localhost:8080/getImage?filepath={{reportContent.imagesAccess.front}}"/>
+      <div id="before-thumbnails" class="image-thumbnails">
+        <img (click)="modal(1)" src="http://localhost:8080/getImage?filepath={{reportContent.imagesAccess.back}}"/>
+        <img (click)="modal(2) "src="http://localhost:8080/getImage?filepath={{reportContent.imagesAccess.left_side}}"/>
+        <img (click)="modal(3) "src="http://localhost:8080/getImage?filepath={{reportContent.imagesAccess.right_side}}"/>
+      </div>
+    </div>
+    <h4>After Images</h4>
+    <div id="after-images" class="image-style">
+      <img (click)="modal(0) "src="http://localhost:8080/getImage?filepath={{reportContent.imagesAccess.front}}"/>
+      <div id="after-thumbnails" class="image-thumbnails">
+        <img (click)="modal(1) "src="http://localhost:8080/getImage?filepath={{reportContent.imagesAccess.back}}"/>
+        <img (click)="modal(2) "src="http://localhost:8080/getImage?filepath={{reportContent.imagesAccess.left_side}}"/>
+        <img (click)="modal(3) "src="http://localhost:8080/getImage?filepath={{reportContent.imagesAccess.right_side}}"/>
+      </div>
+    </div>
+  </div>
+
+  <input id="complete-appraisal" *ngIf="!reportContent.appraisalComplete" type="submit" value="Appraisal Complete" (click)="completeAppraisal(reportContent.appraisalId)">
+  <input id="flag-appraisal" *ngIf="!reportContent.appraisalComplete && reportContent.damagePresent" type="submit" value="Flag as no damage" (click)="flagAppraisal(reportContent.appraisalId)">
+
+  <div id="modalContainer" *ngIf="presentModal" >
+    <a id="leftArrow" role="button" (click)="moveLeft()" (document:keyup.arrowleft)="moveLeft()">
+      <img src="../../assets/arrow-92-64.png"/>
+    </a>
+    <img id="modalImg" src="http://localhost:8080/getImage?filepath={{images[imageIndex]}}"/>
+    <a id="rightArrow" name="button" (click)="moveRight()" (document:keyup.arrowright)="moveRight()">
+      <img src="../../assets/arrow-28-64.png"/>
+    </a>
+    <a id="closeButton" name="button" (click)="closeModal()" (document:keyup.escape)="closeModal()">
+      <img src="../../assets/x-mark-32.png"/>
+    </a>
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+<div id="home-content">
+  <h1>Awaiting Appraisal</h1>
+  <p>A list of all open appraisals in the system</p>
+  <div class="awaiting-appraisal">
+    <a [routerLink]="['/report',car.appraisalId]" *ngFor="let car of awaitingAppraisals">
+      <div class="appraisal">
+        <p class="appraisal-heading">Appraisal No. {{car.appraisalId}}</p>
+        <img src="http://localhost:8080/getImage?filepath={{car.imagesAccess.front}}"> <!-- Needs to be populated with JSON from a REST call to backend -->
+        <p id="reg-plate">{{car.carAccess.carRegistration}} ({{car.carAccess.make}}, {{car.carAccess.model}})</p>
+        <p>{{car.rentalDate}}  -  {{car.returnDate}}</p> <!-- Needs to be populated with JSON from a REST call to backend -->
+      </div>
+    </a>
+  </div>
+  <div *ngIf="noAppraisalsFound" class="error">
+    <h2>No Appraisals Found</h2>
+  </div>
+</div>

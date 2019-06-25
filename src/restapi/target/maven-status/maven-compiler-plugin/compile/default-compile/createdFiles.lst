@@ -1,0 +1,11 @@
+restapi/dataAccess/AppraisalRepository.class
+restapi/dataAccess/ImagesAccess.class
+restapi/RestApi.class
+restapi/dataAccess/AppraisalAccess.class
+restapi/dataAccess/ImagesRepository.class
+restapi/GetController.class
+restapi/PostController.class
+restapi/PutController.class
+restapi/RestApi$1.class
+restapi/dataAccess/CarAccess.class
+restapi/dataAccess/CarRepository.class

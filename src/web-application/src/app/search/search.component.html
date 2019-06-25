@@ -1,0 +1,35 @@
+<div id="search-content">
+  <h1>Search</h1>
+  <p>Input the registration plate of the car below</p>
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+
+    <input id="searchInput" type="text" formControlName="searchTerm" placeholder="Eg.. 06-D-12345">
+
+    <input type="submit" value="Search">
+
+    <div *ngIf="submitted && searchForm.invalid" class="error">
+      <div *ngIf="searchForm.controls.searchTerm.errors.required"> <p>A search term is required</p> </div>
+      <div *ngIf="searchForm.controls.searchTerm.errors.pattern"> <p> Must match the pattern YYY-CC-SSSSSS</p> </div>
+    </div>
+  </form>
+
+  <h4 *ngIf="searchResults != undefined">Search Result:</h4>
+  <div id="resultsSection" *ngIf="searchResults != undefined">
+    <a [routerLink]="['/history',searchResults.carRegistration]">
+    <div id="result">
+      <div id="car-details">
+        <h4>{{searchResults.make}}, {{searchResults.model}}</h4>
+        <h5>{{searchResults.carRegistration}}</h5>
+      </div>
+      <div id="appraisal-details">
+        <h5>Appraisals</h5>
+        <h2>{{appraisalCount}}</h2>
+      </div>
+    </div>
+    </a>
+  </div>
+
+  <h4 *ngIf="searchResults == undefined && submitted && success">No cars found for: {{searchTerm}}</h4>
+
+</div>
+

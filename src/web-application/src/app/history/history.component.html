@@ -1,0 +1,33 @@
+<div id="history-content">
+
+  <h1>History</h1>
+  <h2>{{carRegistration}}</h2>
+
+  <p>A timeline of each of the appraisals for a car</p>
+
+  <h2> Timeline </h2>
+  <div id="timeline" *ngIf="appraisalsFound">
+    <div class="entry-container" *ngFor="let appraisal of appraisals">
+      <div class="outer-circle"><div class="inner-circle"></div></div>
+      <a class="history-entry" [routerLink]="['/report',appraisal.appraisalId]">
+        <img src="http://localhost:8080/getImage?filepath={{appraisal.imagesAccess.front}}">
+        <div class="history-content">
+          <div class="rental-date">
+            <h4>Rental Date</h4>
+            <h5>{{appraisal.rentalDate}}</h5>
+          </div>
+          <div class="return-date">
+            <h4>Return Date</h4>
+            <h5>{{appraisal.returnDate}}</h5>
+          </div>
+        </div>
+        <div class="indicator" [ngStyle]="setAppraisalIndicator(appraisal.appraisalComplete)">
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div *ngIf="!appraisalsFound" class="error">
+    <h2>No appraisals found for this car</h2>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="new-car-content">
+  <h1>Add Car</h1>
+  <p>Input the details for a new car below</p>
+  <form [formGroup]="newCarForm" (ngSubmit)="onSubmit()">
+
+    <h4>Car Registration</h4>
+    <input id="regPlateInput" type="text" formControlName="regPlateInput" placeholder="Eg.. 06-D-12345">
+    <div *ngIf="submitted && newCarForm.invalid && newCarForm.controls.regPlateInput.errors" class="error">
+      <div *ngIf="newCarForm.controls.regPlateInput.errors.required"> <p> A valid car registration is required</p> </div>
+      <div *ngIf="newCarForm.controls.regPlateInput.errors.pattern"> <p> Must match the pattern YYY-CC-SSSSSS</p> </div>
+    </div>
+
+    <h4>Make</h4>
+    <input id="carMake" type="text" formControlName="carMakeInput" placeholder="Eg.. Nissan">
+    <div *ngIf="submitted && newCarForm.invalid && newCarForm.controls.carMakeInput.errors" class="error">
+      <div *ngIf="newCarForm.controls.carMakeInput.errors.required"> <p> A valid car make is required</p> </div>
+    </div>
+
+    <h4>Model</h4>
+    <input id="carModel" type="text" formControlName="carModelInput" placeholder="Eg.. Micra">
+    <div *ngIf="submitted && newCarForm.invalid && newCarForm.controls.carModelInput.errors" class="error">
+      <div *ngIf="newCarForm.controls.carModelInput.errors.required"> <p> A valid car model is required</p> </div>
+    </div>
+
+    <br/>
+    <input type="submit" value="Submit">
+  </form>
+
+  <div *ngIf="carAlreadyPresent" class="error">
+    <h3>A car with this registration has already been created</h3>
+  </div>
+
+  <div *ngIf="carSuccessfullyAdded">
+    <h3>Car Added Successfully</h3>
+  </div>
+</div>

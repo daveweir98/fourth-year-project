@@ -1,0 +1,118 @@
+#search-content {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  font-size: 32px;
+  padding: 1%;
+  border-radius: 2px;
+}
+
+input[type=text] {
+  border: none;
+  flex: 1;
+  background-color: #17252a;
+  color: white;
+  transition: box-shadow 0.08s linear;
+}
+
+input[type=text]:focus {
+  box-shadow: 0px 0px 0px 5px #17252a;
+  background-color: white;
+  color: #17252a;
+}
+
+input[type=submit] {
+  border: none;
+  background-color: #3aafa9ff;
+  color: #17252a;
+  margin-top: 5%;
+  align-self: center;
+  width: fit-content;
+  padding-left: 5%;
+  padding-right: 5%;
+  transition: box-shadow 0.08s linear;
+}
+
+input[type=submit]:hover {
+  box-shadow: 0px 0px 0px 3px #17252a;
+}
+
+a {
+  margin-top: 5%;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+#resultsSection {
+  /*margin-top: 2.5%;*/
+  width: 100%;
+}
+
+#resultsSection a {
+  text-decoration: none;
+  width: 100%;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+h4 {
+  margin-top: 2.5%;
+  margin-bottom: 0.5%;
+}
+
+h5 {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+#result {
+  display: flex;
+  flex-direction: row;
+  background-color: #def2f1ff;
+  border: 5px solid #def2f1ff;
+  border-radius: 5px;
+  width: 40%;
+  transition: box-shadow 0.08s linear;
+}
+
+#result:hover {
+  box-shadow: 0px 0px 0px 5px #3aafa9ff;
+}
+
+#car-details {
+  padding-right: 2%;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 66%;
+  border-right: 2px solid #3aafa9ff;
+}
+
+#appraisal-details {
+  padding-left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 34%;
+  border-left: 2px solid #3aafa9ff;
+}
+
+

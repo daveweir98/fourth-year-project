@@ -1,0 +1,173 @@
+#report-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#report-content h4 {
+    margin-top: 2%;
+    margin-bottom: 0.5%;
+}
+
+#details-table {
+    width: 30%;
+}
+
+#details-table table {
+    text-align: left;
+    border-spacing: 0;
+    width: 100%;
+    font-size: 16px;
+    border: 5px solid #def2f1ff;
+    border-radius: 5px;
+}
+
+#details-table table th {
+    color: #17252a;
+    background-color: #def2f1ff;
+}
+
+th, td {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 2.5%;
+}
+
+.status {
+    margin: 0.5%;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+#flagged {
+    background-color: #fffacd;
+    border: 2px solid #cccc00;
+}
+
+#open {
+    background-color: #cbfdcb;
+    border: 2px solid #228b22;
+}
+
+#closed {
+    background-color: #ffab99;
+    border: 2px solid red;
+}
+
+p {
+    margin: 0;
+}
+
+#report-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#report-images .image-style {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+#report-images .image-style img {
+    width: 100%;
+    transition: box-shadow 0.08s linear;
+    border: 5px solid #def2f1ff;
+    border-radius: 5px;
+    margin: 2%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.image-style img:hover {
+    box-shadow: 0px 0px 0px 5px #3aafa9ff;
+}
+
+#report-images .image-style .image-thumbnails {
+    width: 20%;
+}
+
+#before-images, #after-images {
+    width: 80%;
+}
+
+input {
+    font-size: 32px;
+    padding: 1%;
+    border-radius: 2px;
+}
+
+input[type=submit] {
+    border: none;
+    background-color: #3aafa9ff;
+    color: #17252a;
+    margin-top: 5%;
+    align-self: center;
+    width: 40%;
+    transition: box-shadow 0.08s linear;
+}
+
+input[type=submit]:hover {
+    box-shadow: 0px 0px 0px 3px #17252a;
+}
+
+#complete-appraisal {
+    margin-bottom: 5px;
+}
+
+#flag-appraisal {
+    margin-top: 2%;
+    margin-bottom: 20px;
+}
+
+
+#modalContainer {
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(23, 37, 42, 0.9);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#modalContainer a:hover img {
+    filter: brightness(0) invert(1);
+}
+
+#modalContainer a img {
+    transition: filter 0.08s ease;
+}
+
+#modalImg, #rightArrow, #leftArrow {
+    justify-self: center;
+    align-self: center;
+}
+
+#modalImg {
+    width: 50%;
+}
+
+#leftArrow {
+    margin-right: 1%;
+}
+
+#rightArrow {
+    margin-left: 1%;
+}
+
+#closeButton {
+    margin-top: 1%;
+    height: fit-content;
+    float: right;
+}
+
+#closeButton, #rightArrow, #leftArrow {
+    cursor: pointer;
+}
+
